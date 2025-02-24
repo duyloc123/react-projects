@@ -8,6 +8,22 @@ function Register() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    if(errors.Username === "" && errors.Password === "" && errors.Email === "") {
+      console.log("Đăng ký thành công");
+      const newUser = {
+        Username: userName.current.value,
+        Password: passWord.current.value
+      }
+      localStorage.setItem("user", JSON.stringify(newUser));
+
+      // Get localStorage
+      // const infoUser = localStorage.getItem("user");
+      // const userObject = JSON.parse(infoUser);
+      // console.log(userObject);
+
+    } else {
+      console.log("Đăng ký thất bại");
+    }
   }
 
   function validationInput(ref, minLength, fieldName) {

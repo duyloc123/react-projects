@@ -1,0 +1,27 @@
+li {
+    margin: 5px 0 5px 0;
+    position: relative;
+}
+
+li::after {
+    width: 0;
+    height: 2px;
+    background-color: black;
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+li:hover::after {
+    animation: spin 1s both;
+}
+
+@keyframes spin {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
