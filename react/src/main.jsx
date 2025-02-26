@@ -6,8 +6,11 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 
+import { AppProvider } from './Context/CartContext.jsx'
+
+
 createRoot(document.getElementById('root')).render(
-  <>
+  <AppProvider>
     <BrowserRouter>
         <Routes>
           <Route path = "/" element = {<App />}>
@@ -17,5 +20,5 @@ createRoot(document.getElementById('root')).render(
           </Route>
         </Routes>
       </BrowserRouter>
-  </>,
+  </AppProvider>
 )
